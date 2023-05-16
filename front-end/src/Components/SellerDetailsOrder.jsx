@@ -59,87 +59,89 @@ export default function SellerDetailsOrder() {
       <p>Detalhe do Pedido</p>
       <div>
         <div>
-          <div>
-            <span
-              data-testid="seller_order_details__element-order-details-label-order-id"
-            >
-              {`Pedido ${orderId};`}
-            </span>
-            <span
-              data-testid={ dateId }
-            >
-              {orderInfo.saleDate}
-            </span>
-            <span
-              data-testid={ statusId }
-            >
-              {orderInfo.status}
-            </span>
-            <Button
-              id="prepare_order"
-              onClick={ () => prepareOrder() }
-              text="PREPARAR PEDIDO"
-              dataTestId="seller_order_details__button-preparing-check"
-              disabled={ isPrepareDisabled }
-            />
-            <Button
-              id="deliver_order"
-              onClick={ () => dispatchOrder() }
-              text="SAIU PARA ENTREGA"
-              dataTestId="seller_order_details__button-dispatch-check"
-              disabled={ isDispatchDisabled }
-            />
-          </div>
+          <span
+            data-testid="seller_order_details__element-order-details-label-order-id"
+          >
+            {`Pedido ${orderId};`}
+          </span>
+          <span
+            data-testid={ dateId }
+          >
+            {orderInfo.saleDate}
+          </span>
+          <span
+            data-testid={ statusId }
+          >
+            {orderInfo.status}
+          </span>
+          <Button
+            id="prepare_order"
+            onClick={ () => prepareOrder() }
+            text="PREPARAR PEDIDO"
+            dataTestId="seller_order_details__button-preparing-check"
+            disabled={ isPrepareDisabled }
+          />
+          <Button
+            id="deliver_order"
+            onClick={ () => dispatchOrder() }
+            text="SAIU PARA ENTREGA"
+            dataTestId="seller_order_details__button-dispatch-check"
+            disabled={ isDispatchDisabled }
+          />
         </div>
-        <div id="table_head">
-          <span>Item</span>
-          <span>Descrição</span>
-          <span>Quantidade</span>
-          <span>Valor Unitário</span>
-          <span>Sub-total</span>
-        </div>
-        <div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Descrição</th>
+            <th>Quantidade</th>
+            <th>Valor Unitário</th>
+            <th>Sub-total</th>
+          </tr>
+        </thead>
+        <tbody>
           {orderInfo.products.map((p, i) => (
-            <div key={ i }>
-              <span
+            <tr key={ i }>
+              <th
                 data-testid={
                   `seller_order_details__element-order-table-item-number-${i}`
                 }
               >
-                {i}
-              </span>
-              <span
+                {i + 1}
+              </th>
+              <th
                 data-testid={ `seller_order_details__element-order-table-name-${i}` }
               >
-                {i}
-              </span>
-              <span
+                {p.name}
+              </th>
+              <th
                 data-testid={
                   `seller_order_details__element-order-table-quantity-${i}`
                 }
               >
                 {p.SalesProducts.quantity}
-              </span>
-              <span
+              </th>
+              <th
                 data-testid={
                   `seller_order_details__element-order-table-unit-price-${i}`
                 }
               >
                 {p.price}
-              </span>
-              <span
+              </th>
+              <th
                 data-testid={
                   `seller_order_details__element-order-table-sub-total-${i}`
                 }
               >
                 {(Number(p.price) * p.SalesProducts.quantity).toFixed(2)}
-              </span>
-            </div>
+              </th>
+            </tr>
           ))}
-        </div>
-        <div data-testid="seller_order_details__element-order-total-price">
-          {orderInfo.totalPrice.replace('.', ',')}
-        </div>
+        </tbody>
+      </table>
+      <div data-testid="seller_order_details__element-order-total-price">
+        {orderInfo.totalPrice.replace('.', ',')}
       </div>
     </div>
   );
