@@ -10,7 +10,6 @@ function MyOrders() {
 
   useEffect(() => {
     const { id } = getUser();
-    console.log(id);
     const request = async () => {
       const response = await getOrders(`/customer/orders/${id}`);
       setOrders(response);
@@ -18,20 +17,22 @@ function MyOrders() {
     request();
   }, []);
   return (
-    <div>
+    <>
       <Navbar />
-      {
-        orders.map((e) => (
-          <CardOrder
-            key={ e.id }
-            id={ e.id }
-            status={ e.status }
-            saleDate={ e.saleDate }
-            totalPrice={ e.totalPrice }
-          />
-        ))
-      }
-    </div>
+      <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8 ml-20 mt-10 mr-20">
+        {
+          orders.map((e) => (
+            <CardOrder
+              key={ e.id }
+              id={ e.id }
+              status={ e.status }
+              saleDate={ e.saleDate }
+              totalPrice={ e.totalPrice }
+            />
+          ))
+        }
+      </div>
+    </>
   );
 }
 MyOrders.propTypes = {

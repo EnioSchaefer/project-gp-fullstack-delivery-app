@@ -39,7 +39,11 @@ const getOrders = async (id) => {
   return { type: null, message: dataValues };
 };
 
-const updateOrderStatus = async (id, status) => Sales.update({ status }, { where: { id } });
+const updateOrderStatus = async (id, status) => {
+  Sales.update({ status }, { where: { id } });
+
+  return { type: null, message: status };
+};
 
 const getSellersId = async (id) => {
   const dataValues = await Sales.findAll({

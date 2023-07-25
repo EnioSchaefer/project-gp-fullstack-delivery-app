@@ -9,6 +9,7 @@ import SellerOrderDetails from '../Pages/SellerOrderDetails';
 import MyOrders from '../Pages/MyOrders';
 import AdminManage from '../Pages/AdminManage';
 import SellerOrder from '../Pages/SellerOrder';
+import NotFound from '../Pages/NotFound';
 
 function Routes() {
   return (
@@ -25,6 +26,7 @@ function Routes() {
       <Route exact path="/">
         <Redirect to="/login" />
       </Route>
+      <Route component={ NotFound } />
     </Switch>
   );
 }

@@ -1,20 +1,26 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-function Input({ type, label, placeholder, id, dataTestId, onChange, value }) {
+function Input({ type, label, placeholder, id,
+  dataTestId, onChange, value, labelClass, divClass, inputClass }) {
   return (
-    <label htmlFor={ id }>
-      {label}
-      <input
-        type={ type }
-        placeholder={ placeholder }
-        data-testid={ dataTestId }
-        onChange={ onChange }
-        id={ id }
-        value={ value }
-        name={ id }
-      />
-    </label>
+    <>
+      <label htmlFor={ id } className={ labelClass }>
+        {label}
+      </label>
+      <div className={ divClass }>
+        <input
+          type={ type }
+          placeholder={ placeholder }
+          data-testid={ dataTestId }
+          onChange={ onChange }
+          id={ id }
+          value={ value }
+          name={ id }
+          className={ inputClass }
+        />
+      </div>
+    </>
   );
 }
 

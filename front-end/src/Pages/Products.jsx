@@ -5,7 +5,6 @@ import Navbar from '../Components/Navbar';
 import ProductCard from '../Components/ProductCard';
 import { productsRequest } from '../Utils/axios';
 import { getProductsCart, getUser } from '../Utils/LocalStorage';
-import '../Styles/pages/products.css';
 
 export default function Products({ history }) {
   const [isLogged, setIsLogged] = useState(false);
@@ -41,26 +40,30 @@ export default function Products({ history }) {
     <div>
       {isLogged && <Redirect to="/login" />}
       <Navbar />
-      <section className="products-container">
-        {dataProducts.map(({ id, name, price, urlImage }) => (
-          <ProductCard
-            key={ id }
-            id={ id }
-            productName={ name }
-            price={ price }
-            urlImage={ urlImage }
-            forceRender={ setEditionCount }
-          />
-        ))}
+      <section className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
+        <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+          {dataProducts.map(({ id, name, price, urlImage }) => (
+            <ProductCard
+              key={ id }
+              id={ id }
+              productName={ name }
+              price={ price }
+              urlImage={ urlImage }
+              forceRender={ setEditionCount }
+            />
+          ))}
+        </div>
       </section>
       <button
         type="button"
         data-testid="customer_products__button-cart"
         onClick={ () => history.push('/customer/checkout') }
         disabled={ cartProduct.length === 0 }
+        className="fixed bottom-12 right-12 bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
       >
-        Ver carrinho:R$
+        Ver carrinho: R$
         <span data-testid="customer_products__checkout-bottom-value">
+          {' '}
           {totalPrice}
         </span>
       </button>

@@ -42,7 +42,10 @@ export const getOrders = async (endpoint) => {
   return data;
 };
 
-export const updateOrderStatus = async (endpoint, body) => api.patch(endpoint, body);
+export const updateOrderStatus = async (endpoint, body) => {
+  const { data } = await api.patch(endpoint, body);
+  return data;
+};
 
 export const adminRegister = async (endpoint, body) => {
   const { data } = await api.post(endpoint, body);
