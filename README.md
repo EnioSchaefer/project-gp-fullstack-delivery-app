@@ -200,52 +200,52 @@
 <details>
 <summary><strong>Pendente</strong></summary>
 
-<p>Na tela de detalhes do pedido::</p>
+<p>Na tela de detalhes do pedido:</p>
 
-![orders-status-pending](/images/orders-status-pending.png)
+![order-details-status-pending](/images/order-details-status-pending.png)
 
 <p>Na tela de pedidos:</p>
 
-![order-details-status-pending](/images/order-details-status-pending.png)
+![orders-status-pending](/images/order-status-pending.png)
 
 </details>
 
 <details>
 <summary><strong>Preparando</strong></summary>
 
-<p>Na tela de detalhes do pedido::</p>
+<p>Na tela de detalhes do pedido:</p>
 
-![orders-status-preparing](/images/orders-status-preparing.png)
+![order-details-status-preparing](/images/order-details-status-preparing.png)
 
 <p>Na tela de pedidos:</p>
 
-![order-details-status-preparing](/images/order-details-status-preparing.png)
+![orders-status-preparing](/images/orders-status-preparing.png)
 
 </details>
 
 <details>
 <summary><strong>Em Trânsito</strong></summary>
 
-<p>Na tela de detalhes do pedido::</p>
+<p>Na tela de detalhes do pedido:</p>
 
-![orders-status-delivering](/images/orders-status-delivering.png)
+![order-details-status-delivering](/images/order-details-status-delivering.png)
 
 <p>Na tela de pedidos:</p>
 
-![order-details-status-delivering](/images/order-details-status-delivering.png)
+![orders-status-delivering](/images/orders-status-delivering.png)
 
 </details>
 
 <details>
 <summary><strong>Entregue</strong></summary>
 
-<p>Na tela de detalhes do pedido::</p>
+<p>Na tela de detalhes do pedido:</p>
 
-![orders-status-delivered](/images/orders-status-delivered.png)
+![order-details-status-delivered](/images/order-details-status-delivered.png)
 
 <p>Na tela de pedidos:</p>
 
-![order-details-status-delivered](/images/order-details-status-delivered.png)
+![orders-status-delivered](/images/orders-status-delivered.png)
 
 </details>
 <br>
