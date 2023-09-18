@@ -65,7 +65,7 @@
   - [Entregue](#delivered)
 - [Ações e Interações](#actions-and-interactions)
   - [Características](#actions-and-interactions-caracteristics)
-- [Equipe de Desenvolvimento](#development-team)
+- [Equipe de Desenvolvimento](#equipe-de-desenvolvimento)
 
 <br>
 
